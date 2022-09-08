@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+#include <map>
+
+class Atributos
+{
+	double _vidamax;
+	double _vida;
+	double _velocidade;
+	double _ataque;
+	
+	public:
+	
+	Atributos(double vida, double velocidade, double ataque)
+	{
+		_vidamax = vida;
+		_vida = vida;
+		_velocidade = velocidade;
+		_ataque = ataque;
+	}
+	
+	double getvida()
+	{
+		return _vida;
+	}
+	
+	double getvidamax()
+	{
+		return _vidamax;
+	}
+	
+	void dano(double dano)
+	{
+		_vida = _vida - dano;
+	}
+	
+	void cura(double cura)
+	{
+		if(_vida+cura>=_vidamax)
+			_vida = _vidamax;
+		else _vida = _vida+cura;	
+	}
+}
+
+class Personagens
+{
+	
+}
