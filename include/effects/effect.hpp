@@ -5,7 +5,7 @@
 
     class Effect{
 
-        private:
+        protected:
 
             int _value;
             std::string _name;
@@ -16,14 +16,18 @@
             Effect( int value, std::string name, std::string  description);
 
             int getValue();
-                
+            
             std::string getName();
 
             std::string getDescription();
             
-            // polimorfismo da classe: serão utilizadas apeanas as 
-            // subclasses que alteram seus respectivos atributos da entidade.
-            virtual void addEffect();
+            // clona o efeito para a entidade colocar esse clone
+            // em sua lista de efeitos.
+            virtual Effect* cloneEffect();
 
+            //polimorfismo principal da classe: retorna o tipo para a entidade 
+            //reconhecer onde aplicar o efeito.
+            virtual char getType();
+            
     };
 #endif

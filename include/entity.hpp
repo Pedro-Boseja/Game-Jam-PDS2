@@ -8,32 +8,39 @@
 
     class Entity{
 
-        private:
+        protected:
 
         std::string _name;
         int _life;
         int _defense;
-        std::list<Attack> _hit;
-        std::list<Effect> _effect;
+        std::list<Effect*> _effect;
 
         public:
 
             Entity( std::string name,
                     int life,
                     int defense,
-                    std::list<Attack>& hit,
-                    std::list<Effect>& effect);
+                    std::list<Effect*>& effect);
             
+            ~Entity();
             
             int getLife();
 
-            std::string getName();
+            int setLife(int life);
 
-            Attack* getHit(int id);
+            int getDefense();
+
+            std::string getName();
 
             Effect* getEffect(int id);
 
-            void doHit(Entity& enemy);
+            void addEffect(Effect* effect);
+            
+            void delEffect(Effect* effect);
+
+            virtual Attack* getHit(int id);
+
+            virtual int doHit(Entity& enemy, Attack* hit);
 
 
     };
