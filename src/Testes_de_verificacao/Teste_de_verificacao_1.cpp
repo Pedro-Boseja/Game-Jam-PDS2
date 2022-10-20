@@ -6,11 +6,12 @@
 #include <list>
 #include <string>
 
-int main(){
+int main()
+{
 
     LifeEffect effect(-12, "veneno", "veneno eh venenoso");
 
-    Attack hit(30, "paulada", "da uma paulada na cabeça");
+    // Attack hit(30, "paulada", "da uma paulada na cabeça");
 
     
 
